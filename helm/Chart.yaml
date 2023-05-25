@@ -1,0 +1,4 @@
+apiVersion: v1
+description: 'ArgoCD: As A Service'
+name: argocd-aas
+version: 0.1.0
