@@ -19,10 +19,10 @@ spec:
        repoURL: https://github.com/fdavalo/argocd-aas.git
        targetRevision: HEAD
        path: "helm"
-     helm:
-       parameters:
-         -name: env
-          values: '{{env}}' 
+       helm:
+         parameters:
+           - name: env
+             value: '{{env}}'       
      destination:
        server: '{{cluster}}'
        namespace: '{{namespace}}'
