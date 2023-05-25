@@ -1,0 +1,6 @@
+{
+    "name": "team2",
+    "namespace": "team2",
+    "cluster": "https://kubernetes.default.svc",
+    "env": "dev"
+}
