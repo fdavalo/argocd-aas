@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+ name: argocd
+ namespace: openshift-gitops
+spec:
+ generators:
+ - git:
+     repoURL: https://github.com/fdavalo/argocd-aas.git
+     revision: HEAD
+     files:
+     - path: "instances/**/config.json"
+ template:
+   metadata:
+     name: '{{name}}-argocd'
+   spec:
+     project: default
+     source:
+       repoURL: https://github.com/fdavalo/argocd-aas.git
+       targetRevision: HEAD
+       path: "helm"
+     helm:
+       parameters:
+         -name: env
+          values: '{{env}}' 
+     destination:
+       server: '{{cluster}}'
+       namespace: '{{namespace}}'
