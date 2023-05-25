@@ -26,3 +26,8 @@ spec:
      destination:
        server: '{{cluster}}'
        namespace: '{{namespace}}'
+     syncPolicy:
+       syncOptions:
+        - CreateNamespace=true
+       automated:
+         selfHeal: true       
