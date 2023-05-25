@@ -1,0 +1,6 @@
+{
+    "name": "team1",
+    "namespace": "team1",
+    "cluster": "in-cluster",
+    "env": "dev"
+}
